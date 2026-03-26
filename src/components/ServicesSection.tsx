@@ -15,7 +15,7 @@ const services = [
   {
     title: "Cardápios Digitais",
     desc: "Seu cardápio online acessível por celular.",
-    img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80",
+    img: cardapioDigital,
   },
 ];
 
