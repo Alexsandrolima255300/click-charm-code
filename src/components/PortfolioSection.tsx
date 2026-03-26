@@ -40,6 +40,7 @@ const portfolioItems = [
 
 const PortfolioSection = () => {
   const [selected, setSelected] = useState<typeof portfolioItems[0] | null>(null);
+  const navigate = useNavigate();
 
   return (
     <section className="px-6 py-20">
