@@ -23,6 +23,7 @@ const App = () => (
           <Route path="/sites" element={<SitesPortfolio />} />
           <Route path="/cardapio-burguer" element={<CardapioBurguer />} />
           <Route path="/cardapio-restaurante" element={<CardapioRestaurante />} />
+          <Route path="/cardapio-gourmet" element={<CardapioGourmet />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
