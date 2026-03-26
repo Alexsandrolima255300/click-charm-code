@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import SitesPortfolio from "./pages/SitesPortfolio.tsx";
 import CardapioBurguer from "./pages/CardapioBurguer.tsx";
 import CardapioRestaurante from "./pages/CardapioRestaurante.tsx";
+import CardapioGourmet from "./pages/CardapioGourmet.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
