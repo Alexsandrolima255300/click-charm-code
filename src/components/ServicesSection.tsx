@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import cardapioDigital from "@/assets/cardapio-digital.jpg";
 
 const services = [
   {
