@@ -1,11 +1,22 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import cardapioBurguer from "@/assets/cardapio-burguer.jpg";
 
 const portfolioItems = [
   {
+    src: cardapioBurguer,
+    title: "Cardápio Burguer",
+    category: "Cardápio",
+  },
+  {
     src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80",
-    title: "Cardápio Digital",
+    title: "Cardápio Restaurante",
+    category: "Cardápio",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
+    title: "Cardápio Gourmet",
     category: "Cardápio",
   },
   {
@@ -14,23 +25,13 @@ const portfolioItems = [
     category: "Social Media",
   },
   {
-    src: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=600&q=80",
-    title: "Site Profissional",
-    category: "Website",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
-    title: "Cardápio Restaurante",
-    category: "Cardápio",
-  },
-  {
     src: "https://images.unsplash.com/photo-1563986768609-322da13575f2?auto=format&fit=crop&w=600&q=80",
     title: "Feed Instagram",
     category: "Social Media",
   },
   {
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
-    title: "Landing Page",
+    src: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=600&q=80",
+    title: "Site Profissional",
     category: "Website",
   },
 ];
@@ -58,7 +59,6 @@ const PortfolioSection = () => {
               loading="lazy"
               className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            {/* Overlay */}
             <div className="absolute inset-0 bg-background/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3">
               <span className="text-xs font-body uppercase tracking-widest text-primary">{item.category}</span>
               <h3 className="font-display text-lg font-semibold text-foreground">{item.title}</h3>
@@ -70,13 +70,12 @@ const PortfolioSection = () => {
         ))}
       </div>
 
-      {/* Lightbox dialog */}
       <Dialog open={!!selected} onOpenChange={() => setSelected(null)}>
         <DialogContent className="max-w-2xl p-2 bg-card border-border">
           {selected && (
             <div>
               <img
-                src={selected.src.replace("w=600", "w=1200")}
+                src={typeof selected.src === "string" && selected.src.startsWith("http") ? selected.src.replace("w=600", "w=1200") : selected.src}
                 alt={selected.title}
                 className="w-full rounded-lg object-cover max-h-[70vh]"
               />
