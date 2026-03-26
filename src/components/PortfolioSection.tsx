@@ -29,11 +29,6 @@ const portfolioItems = [
     category: "Social Media",
   },
   {
-    src: "https://images.unsplash.com/photo-1563986768609-322da13575f2?auto=format&fit=crop&w=600&q=80",
-    title: "Feed Instagram",
-    category: "Social Media",
-  },
-  {
     src: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=600&q=80",
     title: "Site Profissional",
     category: "Website",
