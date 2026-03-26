@@ -1,30 +1,95 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
-const images = [
-  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
+const portfolioItems = [
+  {
+    src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80",
+    title: "Cardápio Digital",
+    category: "Cardápio",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80",
+    title: "Post Instagram",
+    category: "Social Media",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=600&q=80",
+    title: "Site Profissional",
+    category: "Website",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
+    title: "Cardápio Restaurante",
+    category: "Cardápio",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1563986768609-322da13575f2?auto=format&fit=crop&w=600&q=80",
+    title: "Feed Instagram",
+    category: "Social Media",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+    title: "Landing Page",
+    category: "Website",
+  },
 ];
 
-const PortfolioSection = () => (
-  <section className="px-6 py-20">
-    <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-12">Portfólio</h2>
-    <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-      {images.map((src, i) => (
-        <motion.img
-          key={i}
-          src={src}
-          alt={`Projeto ${i + 1}`}
-          loading="lazy"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: i * 0.1 }}
-          className="w-72 md:w-80 h-52 object-cover rounded-xl border border-border"
-        />
-      ))}
-    </div>
-  </section>
-);
+const PortfolioSection = () => {
+  const [selected, setSelected] = useState<typeof portfolioItems[0] | null>(null);
+
+  return (
+    <section className="px-6 py-20">
+      <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-12">Portfólio</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        {portfolioItems.map((item, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.08 }}
+            className="group relative rounded-xl overflow-hidden border border-border cursor-pointer"
+            onClick={() => setSelected(item)}
+          >
+            <img
+              src={item.src}
+              alt={item.title}
+              loading="lazy"
+              className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-background/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3">
+              <span className="text-xs font-body uppercase tracking-widest text-primary">{item.category}</span>
+              <h3 className="font-display text-lg font-semibold text-foreground">{item.title}</h3>
+              <span className="inline-flex items-center gap-1 bg-primary text-primary-foreground font-display font-semibold px-5 py-2 rounded-lg text-sm hover:brightness-110 transition-all">
+                Ver mais
+              </span>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Lightbox dialog */}
+      <Dialog open={!!selected} onOpenChange={() => setSelected(null)}>
+        <DialogContent className="max-w-2xl p-2 bg-card border-border">
+          {selected && (
+            <div>
+              <img
+                src={selected.src.replace("w=600", "w=1200")}
+                alt={selected.title}
+                className="w-full rounded-lg object-cover max-h-[70vh]"
+              />
+              <div className="p-4">
+                <span className="text-xs font-body uppercase tracking-widest text-primary">{selected.category}</span>
+                <h3 className="font-display text-xl font-semibold mt-1">{selected.title}</h3>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+    </section>
+  );
+};
 
 export default PortfolioSection;
