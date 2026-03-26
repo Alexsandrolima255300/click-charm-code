@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import cardapioBurguer from "@/assets/cardapio-burguer.jpg";
 
@@ -33,11 +34,13 @@ const portfolioItems = [
     src: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=600&q=80",
     title: "Site Profissional",
     category: "Website",
+    link: "/sites",
   },
 ];
 
 const PortfolioSection = () => {
   const [selected, setSelected] = useState<typeof portfolioItems[0] | null>(null);
+  const navigate = useNavigate();
 
   return (
     <section className="px-6 py-20">
@@ -51,7 +54,13 @@ const PortfolioSection = () => {
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
             className="group relative rounded-xl overflow-hidden border border-border cursor-pointer"
-            onClick={() => setSelected(item)}
+            onClick={() => {
+              if ('link' in item && item.link) {
+                navigate(item.link as string);
+              } else {
+                setSelected(item);
+              }
+            }}
           >
             <img
               src={item.src}
