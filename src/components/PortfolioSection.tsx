@@ -86,11 +86,26 @@ const PortfolioSection = () => {
               <img
                 src={typeof selected.src === "string" && selected.src.startsWith("http") ? selected.src.replace("w=600", "w=1200") : selected.src}
                 alt={selected.title}
-                className="w-full rounded-lg object-cover max-h-[70vh]"
+                className="w-full rounded-lg object-cover max-h-[60vh]"
               />
               <div className="p-4">
                 <span className="text-xs font-body uppercase tracking-widest text-primary">{selected.category}</span>
                 <h3 className="font-display text-xl font-semibold mt-1">{selected.title}</h3>
+                {selected.category === "Cardápio" && (
+                  <div className="mt-4 p-4 rounded-lg bg-muted/50 border border-border text-center">
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Gostou desse cardápio? Entre em contato e peça o seu personalizado!
+                    </p>
+                    <a
+                      href="https://wa.me/5534991401087?text=Ol%C3%A1,%20tenho%20interesse%20no%20seu%20servi%C3%A7o"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground font-display font-semibold px-6 py-3 rounded-lg text-sm hover:brightness-110 transition-all"
+                    >
+                      Falar com o desenvolvedor
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           )}
