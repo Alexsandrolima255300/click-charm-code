@@ -54,7 +54,13 @@ const PortfolioSection = () => {
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
             className="group relative rounded-xl overflow-hidden border border-border cursor-pointer"
-            onClick={() => setSelected(item)}
+            onClick={() => {
+              if ('link' in item && item.link) {
+                navigate(item.link as string);
+              } else {
+                setSelected(item);
+              }
+            }}
           >
             <img
               src={item.src}
