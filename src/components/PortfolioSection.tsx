@@ -106,6 +106,21 @@ const PortfolioSection = () => {
                     </a>
                   </div>
                 )}
+                {selected.category === "Social Media" && (
+                  <div className="mt-4 p-4 rounded-lg bg-muted/50 border border-border text-center">
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Entre em contato com o desenvolvedor de posts e fale sua ideia!
+                    </p>
+                    <a
+                      href="https://wa.me/5534991401087?text=Ol%C3%A1,%20tenho%20interesse%20no%20seu%20servi%C3%A7o"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground font-display font-semibold px-6 py-3 rounded-lg text-sm hover:brightness-110 transition-all"
+                    >
+                      Falar com o desenvolvedor
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           )}
