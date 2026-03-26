@@ -34,6 +34,7 @@ const portfolioItems = [
     src: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=600&q=80",
     title: "Site Profissional",
     category: "Website",
+    link: "/sites",
   },
 ];
 
