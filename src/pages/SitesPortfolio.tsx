@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import salonRoger from "@/assets/salon-roger.jpg";
 
 const sites = [
   {
     title: "Roger Studio Hair",
     desc: "Site profissional para barbearia/salão de beleza.",
     url: "https://gamma.app/docs/Roger-Studio-Hair-98vqsnp73tn3j9c",
-    img: "https://images.unsplash.com/photo-1585747860874-a3ef810d5894?auto=format&fit=crop&w=600&q=80",
+    img: salonRoger,
   },
   {
     title: "Vinicius Churrasqueiro",
