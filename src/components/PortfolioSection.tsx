@@ -9,6 +9,7 @@ const portfolioItems = [
     src: cardapioBurguer,
     title: "Cardápio Burguer",
     category: "Cardápio",
+    link: "/cardapio-burguer",
   },
   {
     src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80",
