@@ -10,14 +10,18 @@ interface Message {
 function getResponse(msg: string): string {
   const lower = msg.toLowerCase();
   if (lower.includes("preço") || lower.includes("valor"))
-    return "Os valores variam conforme o projeto. Clique no WhatsApp para receber um orçamento gratuito!";
+    return "Os valores variam, mas o orçamento é gratuito. Clique no WhatsApp!";
   if (lower.includes("site"))
-    return "Criamos sites profissionais, rápidos e personalizados para seu negócio.";
+    return "Criamos sites profissionais e personalizados para seu negócio.";
+  if (lower.includes("prazo"))
+    return "O prazo médio é de 2 a 5 dias.";
+  if (lower.includes("pagamento"))
+    return "Você só paga depois de ver o projeto pronto!";
   if (lower.includes("post"))
     return "Criamos posts profissionais para redes sociais que aumentam suas vendas.";
   if (lower.includes("cardápio") || lower.includes("cardapio"))
     return "Fazemos cardápios digitais modernos e fáceis de acessar.";
-  return "Desculpe, não entendi. Clique no WhatsApp para falar com um atendente.";
+  return "Clique no WhatsApp para falar comigo.";
 }
 
 const ChatWidget = () => {

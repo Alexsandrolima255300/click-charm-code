@@ -1,16 +1,27 @@
 import { motion } from "framer-motion";
-import { Globe, Image, UtensilsCrossed } from "lucide-react";
 
 const services = [
-  { icon: Globe, title: "Sites", desc: "Sites completos para empresas e profissionais." },
-  { icon: Image, title: "Posts", desc: "Posts para Instagram que chamam atenção." },
-  { icon: UtensilsCrossed, title: "Cardápios", desc: "Cardápios digitais modernos." },
+  {
+    title: "Criação de Sites",
+    desc: "Sites rápidos, modernos e feitos para vender.",
+    img: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    title: "Posts para Instagram",
+    desc: "Design profissional para atrair clientes.",
+    img: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    title: "Cardápios Digitais",
+    desc: "Seu cardápio online acessível por celular.",
+    img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80",
+  },
 ];
 
 const ServicesSection = () => (
   <section className="px-6 py-20">
     <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-12">Serviços</h2>
-    <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
+    <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
       {services.map((s, i) => (
         <motion.div
           key={s.title}
@@ -18,11 +29,13 @@ const ServicesSection = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: i * 0.12 }}
-          className="bg-card rounded-xl p-8 w-72 border border-border hover:border-primary/40 transition-colors shadow-lg shadow-background/50"
+          className="bg-card rounded-xl overflow-hidden w-80 border border-border hover:border-primary/40 transition-colors shadow-lg"
         >
-          <s.icon className="w-10 h-10 text-primary mb-4" />
-          <h3 className="font-display text-xl font-semibold mb-2">{s.title}</h3>
-          <p className="font-body text-muted-foreground text-sm">{s.desc}</p>
+          <img src={s.img} alt={s.title} className="w-full h-44 object-cover" loading="lazy" />
+          <div className="p-6">
+            <h3 className="font-display text-xl font-semibold mb-2">{s.title}</h3>
+            <p className="font-body text-muted-foreground text-sm">{s.desc}</p>
+          </div>
         </motion.div>
       ))}
     </div>

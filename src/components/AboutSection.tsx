@@ -17,7 +17,7 @@ const AboutSection = () => (
       transition={{ delay: 0.15 }}
       className="font-body text-muted-foreground text-lg leading-relaxed"
     >
-      Eu crio sites, posts e cardápios digitais profissionais para o seu negócio crescer.
+      Crio sites, posts e cardápios digitais modernos para aumentar suas vendas online.
     </motion.p>
   </section>
 );
