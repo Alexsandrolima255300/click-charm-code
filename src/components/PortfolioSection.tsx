@@ -15,6 +15,7 @@ const portfolioItems = [
     src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80",
     title: "Cardápio Restaurante",
     category: "Cardápio",
+    link: "/cardapio-restaurante",
   },
   {
     src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
