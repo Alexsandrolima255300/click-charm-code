@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logo from "@/assets/logo-alexsandro.png";
 
 const HeroSection = () => (
   <section
@@ -7,10 +8,19 @@ const HeroSection = () => (
   >
     <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
 
+    <motion.img
+      src={logo}
+      alt="Alexsandro Paulo - Web Design & Publicidade"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="relative w-64 md:w-80 mb-8"
+    />
+
     <motion.h1
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
+      transition={{ duration: 0.7, delay: 0.2 }}
       className="relative font-display text-4xl md:text-6xl font-bold text-center mb-6 leading-tight"
     >
       Criação de Sites{" "}
@@ -20,7 +30,7 @@ const HeroSection = () => (
     <motion.p
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.2 }}
+      transition={{ duration: 0.7, delay: 0.4 }}
       className="relative font-body text-muted-foreground text-lg md:text-xl text-center max-w-xl mb-10"
     >
       Transforme seu negócio em uma máquina de vendas
@@ -29,7 +39,7 @@ const HeroSection = () => (
     <motion.a
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5, delay: 0.4 }}
+      transition={{ duration: 0.5, delay: 0.6 }}
       href="https://wa.me/5534991401087?text=Olá%2C%20tenho%20interesse%20em%20um%20site"
       target="_blank"
       rel="noopener noreferrer"
