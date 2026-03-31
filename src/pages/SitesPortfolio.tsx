@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
-import salonRoger from "@/assets/salon-roger.jpg";
+import handMadeSite from "@/assets/hand-made-site.jpg";
 
 const sites = [
   {
-    title: "Roger Studio Hair",
-    desc: "Site profissional para barbearia/salão de beleza.",
-    url: "https://gamma.app/docs/Roger-Studio-Hair-98vqsnp73tn3j9c",
-    img: salonRoger,
+    title: "Hand Made",
+    desc: "Site profissional para produtos artesanais.",
+    url: "https://gamma.app/docs/HAND-MADE-2a51671eytoew72",
+    img: handMadeSite,
   },
   {
     title: "Vinicius Churrasqueiro",
