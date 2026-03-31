@@ -8,6 +8,7 @@ import SitesPortfolio from "./pages/SitesPortfolio.tsx";
 import CardapioBurguer from "./pages/CardapioBurguer.tsx";
 import CardapioRestaurante from "./pages/CardapioRestaurante.tsx";
 import CardapioGourmet from "./pages/CardapioGourmet.tsx";
+import PostsInstagram from "./pages/PostsInstagram.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/cardapio-burguer" element={<CardapioBurguer />} />
           <Route path="/cardapio-restaurante" element={<CardapioRestaurante />} />
           <Route path="/cardapio-gourmet" element={<CardapioGourmet />} />
+          <Route path="/posts-instagram" element={<PostsInstagram />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
